@@ -366,6 +366,34 @@ public static void main(String[] args) {
 
 *Write an SQL query that returns one row containing the manager with the most direct subalterns.*
 
+*Find nth higest Salary from table?
+###Row Number :
+SELECT Salary,EmpName
+FROM
+  (
+   SELECT Salary,EmpName,ROW_NUMBER() OVER(ORDER BY Salary) As RowNum
+   FROM EMPLOYEE
+   ) As A
+WHERE A.RowNum IN (2,3)
+
+###Sub Query :
+SELECT *
+FROM Employee Emp1
+WHERE (N-1) = (
+               SELECT COUNT(DISTINCT(Emp2.Salary))
+               FROM Employee Emp2
+               WHERE Emp2.Salary > Emp1.Salary
+               )
+               
+###Top Keyword :
+SELECT TOP 1 salary
+FROM (
+      SELECT DISTINCT TOP n salary
+      FROM employee
+      ORDER BY salary DESC
+      ) a
+ORDER BY salary
+
 ### Generic Questions
 * From a protocol perspective what is the difference between **UDP** and **TCP** ? 
 * What library would use to write a Scheduler in Java ?
