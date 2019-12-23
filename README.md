@@ -367,7 +367,8 @@ public static void main(String[] args) {
 *Write an SQL query that returns one row containing the manager with the most direct subalterns.*
 
 *Find nth higest Salary from table?
-###Row Number :
+
+**Row Number** :
 SELECT Salary,EmpName
 FROM
   (
@@ -376,7 +377,7 @@ FROM
    ) As A
 WHERE A.RowNum IN (2,3)
 
-###Sub Query :
+**Sub Query** :
 SELECT *
 FROM Employee Emp1
 WHERE (N-1) = (
@@ -385,7 +386,7 @@ WHERE (N-1) = (
                WHERE Emp2.Salary > Emp1.Salary
                )
                
-###Top Keyword :
+**Top Keyword** :
 SELECT TOP 1 salary
 FROM (
       SELECT DISTINCT TOP n salary
