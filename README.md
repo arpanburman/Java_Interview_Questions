@@ -366,7 +366,7 @@ public static void main(String[] args) {
 
 *Write an SQL query that returns one row containing the manager with the most direct subalterns.*
 
-*Find nth higest Salary from table?
+***Find nth higest Salary from table?***
 
 **Row Number** :
 SELECT Salary,EmpName
